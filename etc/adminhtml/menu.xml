@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <update id="FME_Extensions::fmeextensions"
+                title="FME Extensions"
+                module="Magento_Backend"
+                sortOrder="70"
+                resource="FME_Extensions::fmeextensions"/>
+        <add id="FME_DeleteMyAccount::main_deletemyaccount"
+             title="FME DeleteMyAccount"
+             parent="FME_Extensions::fmeextensions"
+             module="FME_DeleteMyAccount"
+             sortOrder="51"
+             resource="FME_DeleteMyAccount::main_deletemyaccount"/>
+
+        <add id="FME_DeleteMyAccount::deletemyaccount_listing" title="Delete My Accounts Report" translate="title" module="FME_DeleteMyAccount" sortOrder="10" parent="FME_DeleteMyAccount::main_deletemyaccount" action="deletemyaccount/index/report" resource="FME_DeleteMyAccount::deletemyaccount_listing"/>
+
+
+
+        <add id="FME_DeleteMyAccount::system_config"
+             title="FME Delete My Account Configuration"
+             module="FME_DeleteMyAccount"
+             sortOrder="99"
+             parent="FME_DeleteMyAccount::main_deletemyaccount" action="adminhtml/system_config/edit/section/deletemyaccount" resource="FME_DeleteMyAccount::system_config"/>
+    </menu>
+</config>

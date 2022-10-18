@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="fmeextensions" translate="label" sortOrder="80">
+            <label>FME Extensions</label>
+        </tab>
+        <section id="deletemyaccount" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Delete My Account</label>
+            <tab>fmeextensions</tab>
+            <resource>FME_DeleteMyAccount::system_config</resource>
+            <group id="fmeaccount" translate="label" type="text" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Configuration</label>
+                <field id="enable" translate="label" type="select" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="description" translate="label" type="textarea" sortOrder="104" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Description for Customer</label>                  
+                </field>
+                <field id="link_text" translate="label" type="text" sortOrder="104" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Forntend Link Text</label>                  
+                </field>
+            </group>
+            <group id="customer_email" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Customer Email Template configuration</label>
+
+                <field id="enable" translate="label" type="select" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Customer Email</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="template" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                  <label>Email Template</label>
+                  <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+                  <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+              </field>
+              <field id="sender" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                  <label>Email Sender</label>
+                  <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+              </field>
+              <field id="recipient" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                  <label>Send Emails Replay To</label>
+                  <validate>validate-email</validate>
+              </field>
+          </group>
+
+          <group id="admin_email_configuration" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Admin Reply Email Settings</label>
+            <field id="enable" translate="label" type="select" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Enable Customer Email</label>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            </field>
+            <field id="subject" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Subject</label>
+                <comment>Enter The Subject Of The Email</comment>
+            </field>
+            <field id="sender" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Email Sender</label>
+                <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+            </field>
+            <field id="admin_email" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+              <label>Admin Email</label>
+              <validate>validate-email</validate>
+          </field>
+          <field id="template" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Email Template</label>
+            <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+            <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+        </field>
+    </group>
+
+    <group id="sms" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Sms Setting</label>
+        <field id="sms_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Send Sms</label>
+            <comment>SMS Sends to Customer</comment>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="sms_body" translate="label comment" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>New Delete Account SMS Template.</label>
+          <comment>Variables: %1 is for Customer Full Name.</comment>
+          <depends>
+              <field id="sms_enabled">1</field>
+          </depends>
+      </field>
+  </group>
+
+
+
+  <group id="customer_email_on_delete" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+    <label>Customer Email When Customer Delete</label>
+
+    <field id="enable" translate="label" type="select" showInDefault="1" showInWebsite="0" showInStore="0">
+        <label>Enable Email</label>
+        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+    </field>
+    <field id="template" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+      <label>Email Template</label>
+      <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+      <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+  </field>
+  <field id="sender" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+      <label>Email Sender</label>
+      <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+  </field>
+  <field id="recipient" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+      <label>Send Emails Replay To</label>
+      <validate>validate-email</validate>
+  </field>
+</group>
+
+
+<group id="on_delete_sms" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>Sms Setting</label>
+        <field id="sms_enabled" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Send Sms</label>
+            <comment>SMS Sends to Customer</comment>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="sms_body" translate="label comment" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
+          <label>New Delete Account SMS Template.</label>
+          <comment>Variables: %1 is for Customer Full Name.</comment>
+          <depends>
+              <field id="sms_enabled">1</field>
+          </depends>
+      </field>
+  </group>
+
+
+
+
+
+
+</section>
+</system>
+</config>

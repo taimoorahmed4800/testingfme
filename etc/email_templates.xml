@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    
+  <template id="deletemyaccount_customer_email_template" label="Delete Account Customer Email Template" file="customer_form.html" type="html" module="FME_DeleteMyAccount" area="frontend"/>
+
+  <template id="deletemyaccount_admin_email_configuration_template" label="Delete Account Admin Email Template" file="admin_form.html" type="html" module="FME_DeleteMyAccount" area="frontend"/>
+
+  <template id="deletemyaccount_customer_email_on_delete_template" label="Template When Admin Delete Account" file="admin_account_delete_form.html" type="html" module="FME_DeleteMyAccount" area="frontend"/>
+
+</config>

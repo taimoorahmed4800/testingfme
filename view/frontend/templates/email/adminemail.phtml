@@ -1,0 +1,9 @@
+<?php 
+$data=$block->getShipment();
+$array = (array) $data;
+foreach ($array as $key => $value) {
+
+echo "Customer Email with ".$value['email']." and Customer Id with ".$value['customer_id']." is wanted to Delete Account";
+
+}
+?>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../app/code/Magento/Webapi/etc/webapi.xsd">
+     <route url="/V1/fme/getallaccountsrequests/" method="POST"> 
+        <service class="FME\DeleteMyAccount\Api\DeleteMyAccountInterface" method="getAllAccountsRequests"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/fme/setaccountfordelete/" method="POST"> 
+        <service class="FME\DeleteMyAccount\Api\DeleteMyAccountInterface" method="setAccountForDelete"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/fme/getaccountbyemail/" method="POST"> 
+        <service class="FME\DeleteMyAccount\Api\DeleteMyAccountInterface" method="getAccountbyEmail"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>    

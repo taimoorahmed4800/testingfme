@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+  <table name="fme_delete_my_account" resource="default" engine="innodb" comment="fme_delete_my_account">
+    <column xsi:type="int" name="delete_account_id" padding="10" unsigned="true" nullable="false" identity="true" comment="ID"/>
+    <column xsi:type="text" name="first_name" nullable="true" comment="first_name"/>
+    <column xsi:type="text" name="last_name" nullable="true" comment="last_name"/>
+    <column xsi:type="text" name="email" nullable="true" comment="email"/>
+    <column xsi:type="text" name="address" nullable="true" comment="address"/>
+    <column xsi:type="text" name="telephone" nullable="true" comment="telephone"/>
+    <column xsi:type="text" name="mobile_number" nullable="true" comment="mobile_number"/>
+    <column xsi:type="int" name="is_deleted" nullable="true" comment="is_deleted"/>
+
+    <column xsi:type="int" name="customer_id" nullable="true" comment="customer_id"/>
+    <column xsi:type="int" name="action_admin_id" nullable="true" comment="action_admin_id"/>
+    <column xsi:type="text" name="action_admin_name" nullable="true" comment="action_admin_name"/>
+
+    <column xsi:type="timestamp" name="requested_date" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="requested_date"/>
+    <column xsi:type="timestamp" name="deletion_date" on_update="false" nullable="true" default="NULL" comment="deletion_date"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+      <column name="delete_account_id"/>
+    </constraint>
+  </table>
+</schema>

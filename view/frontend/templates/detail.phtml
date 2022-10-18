@@ -1,0 +1,56 @@
+<form class="form" action="<?php echo $this->getUrl('deletemyaccount/index/detail'); ?>" method="post">
+    <fieldset class="fieldset">
+        <legend class="legend"><span>Insert Details</span></legend><br>
+        <div class="field name required">
+            <label class="label" for="name"><span>First Name</span></label>
+            <div class="control">
+                <input name="firstname" id="firstname" class="input-text" type="text" data-validate="{required:true}" aria-required="true">
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="name"><span>Last Name</span></label>
+            <div class="control">
+                <input name="lastname" id="lastname" class="input-text" type="text" data-validate="{required:true}" aria-required="true">
+            </div>
+        </div>
+
+        <div class="field email required">
+            <label class="label" for="email"><span>Email</span></label>
+            <div class="control">
+                <input name="email" id="email" title="Email" value="roni_cost@example.com" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}" aria-required="true">
+            </div>
+        </div>
+
+        <div class="field name required">
+            <label class="label" for="name"><span>Address</span></label>
+            <div class="control">
+                <input name="address" id="address" class="input-text" type="text" data-validate="{required:true}" aria-required="true">
+            </div>
+        </div>
+
+        <div class="field telephone">
+            <label class="label" for="telephone"><span>Phone Number</span></label>
+            <div class="control">
+                <input name="telephone" id="telephone" title="Phone Number" value="" class="input-text" type="tel">
+            </div>
+        </div>
+
+        <div class="field telephone">
+            <label class="label" for="mobile_number"><span>Mobile Number</span></label>
+            <div class="control">
+                <input name="mobile_number" id="mobile_number" title="Mobile Number" class="input-text" type="tel">
+            </div>
+        </div>
+
+       
+       
+            </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value="">
+            <button type="submit" title="Submit" class="action submit primary">
+                <span>Submit</span>
+            </button>
+        </div>
+    </div>
+</form>

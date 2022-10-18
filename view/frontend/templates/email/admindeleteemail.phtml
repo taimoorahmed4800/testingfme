@@ -1,0 +1,9 @@
+<?php 
+$data = $block->getShipment();
+$array = (array) $data;
+foreach ($array as $key => $value) {
+
+echo "Your Email with ".$value['email']." and Customer Id with ".$value['customer_id']." Account is Deleted Permanently";
+
+}
+?>

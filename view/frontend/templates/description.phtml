@@ -1,0 +1,41 @@
+<?php
+if($this->getCustomerId() && $this->helper->isEnabledInFrontend()) {
+	if($this->helper->getDescription()) {
+		echo __($this->helper->getDescription());
+	}
+	?>
+	<form class="form" id='delete_conform' action="<?php echo $this->getUrl('deletemyaccount/index/save'); ?>" method="post">
+		<input type="hidden" value="1" name="conform_delete">
+		<div class="actions">
+			<button class="action primary" id='delete_account' type="button">
+				<span>Request to Delete My Account</span>
+			</button>
+		</div>
+	</form>
+	<?php } ?>
+
+	<script>
+require([
+    'jquery',
+    'Magento_Ui/js/modal/confirm'
+],
+function($, confirmation) {
+    $('#delete_account').on('click', function (e){
+        e.preventDefault();
+        confirmation({
+            title: 'Delete My Account',
+            content: 'Do you want to Delete The Account?',
+            actions: {
+
+                confirm: function () {
+                    $("#delete_conform").submit();
+                },
+
+                cancel: function () {
+                    return false;
+                }
+            }
+        });
+    });
+});
+</script>
